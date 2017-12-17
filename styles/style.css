@@ -1,0 +1,13 @@
+.header{
+	font-size: 40px;
+	text-decoration: none;
+	color: rgb(255, 70, 92);
+	background-color: white;
+	margin: auto;
+	width: 300px;
+}
+#start-btn{
+	margin: auto;
+	color: rgb(255, 70, 92);
+	background-color: white;
+}
