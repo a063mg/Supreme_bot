@@ -22,7 +22,7 @@ check = (tabId) => {
 	});
 };
 item = (tabId) => {
-	items_size = localStorage["size"];
+	items_size = JSON.parse(localStorage["items_data"])["size"];
 	chrome.tabs.executeScript(tabId, { file: "choose.js"}, function(){
 		chrome.tabs.executeScript(tabId, {
 			code: 'found('+'"'+items_size+'"'+');'
@@ -31,7 +31,12 @@ item = (tabId) => {
 };
 
 find = (tabId) => {
-	chrome.tabs.executeScript(tabId, { file: "finditem.js"} );
+	data = localStorage["items_data"];
+		chrome.tabs.executeScript(tabId, { file: "finditem.js"}, function(){
+		chrome.tabs.executeScript(tabId, {
+			code: 'finditem('+data+');'
+		});
+	});
 };
 
 chrome.extension.onMessage.addListener(

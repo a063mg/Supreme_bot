@@ -1,4 +1,5 @@
 function checkout(data){
+	$(".g-recaptcha").remove()
 	$('#order_billing_name').val(data['name'])
 	$('#order_email').val(data['email'])
 	$('#order_tel').val(data['phone'])

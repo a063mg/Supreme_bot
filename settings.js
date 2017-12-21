@@ -2,9 +2,11 @@ document.getElementById('back').onclick = () => window.location = 'popup.html';
 
 document.getElementById('submit').onclick = () => {
 
-localStorage["size"] = document.getElementById('size').value;
+var size = document.getElementById('size').value;
 // localStorage["name"] = document.getElementById('name').value
-
+var keyword = document.getElementById('keyword').value;
+var color = document.getElementById('color').value;
+var category = document.getElementById('category').value;
 var name = document.getElementById('name').value;
 var email = document.getElementById('email').value;
 var phone = document.getElementById('phone').value;
@@ -23,5 +25,9 @@ var card_year = document.getElementById('card_year').value;
 var JsonObj = {"name": name, "email": email, "phone": phone, "address": address, "address2": address2, "address3": address3, "city": city, "postcode": postcode, "country": country, "card_type": card_type, "card_number": card_number, "cvv": cvv, "card_month": card_month, "card_year": card_year};
 
 localStorage["customer_data"] = JSON.stringify(JsonObj);
+
+var JsonObj = {"keyword": keyword, "category": category, "color": color, "size": size};
+
+localStorage["items_data"] = JSON.stringify(JsonObj);
 
 };
