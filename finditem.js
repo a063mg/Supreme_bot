@@ -1,7 +1,25 @@
 function finditem(data){
 
-	var items_color = data['color'];
-	var items_name = data['keyword'];
+	dic = {"™": 1,"®": 1, "a": 1, "b": 1, "c": 1, "d": 1, "e": 1, "f": 1, "h": 1, "i": 1, "j": 1, "k": 1, "l": 1, "m": 1, "n": 1, "o": 1, "p": 1, "q": 1, "r": 1, "s": 1, "t": 1, "u": 1, "v": 1, "w": 1, "x": 1, "y": 1, "z": 1};
+
+	var items_color = data['color'].toLowerCase();
+	var items_name = data['keyword'].toLowerCase();
+
+	var name = "";
+
+	for (var j= 0; j < items_name.length; j++){ 
+		if (items_name[j] in dic){
+			name = name + items_name[j];
+		}
+	}
+
+	var color = "";
+
+	for (var j= 0; j < items_color.length; j++){ 
+		if (items_color[j] in dic){
+			color = color + items_color[j];
+		}
+	}
 
 	var articles = document.getElementById("container").childNodes;
 
@@ -11,12 +29,23 @@ function finditem(data){
 	for (var i= 0; i < articles.length; i++){ 
 
 		var item = articles[i];
-		var name = item.innerText;
+		var text = item.innerText.toLowerCase();
+		var edited_text = "";
 
-		if (name.toLowerCase().indexOf(items_name.toLowerCase()) > -1){
+		console.log(text);
+
+		for (var j= 0; j < text.length; j++){ 
+			if (text[j] in dic){
+				edited_text = edited_text + text[j];
+			}
+		}
+
+		console.log(edited_text);
+
+		if (edited_text.indexOf(name) > -1){
 			var no_item = false;
 
-			if (name.toLowerCase().indexOf(items_color.toLowerCase()) > -1){
+			if (edited_text.indexOf(color) > -1){
 				var no_color = false;
 				if (item.getElementsByClassName('sold_out_tag').length == 0){
 
