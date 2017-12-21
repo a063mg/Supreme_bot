@@ -2,8 +2,6 @@
 
 function found(item_size){
 
-	console.log(item_size);
-
 	var url = window.location.href;
 
 	button = document.getElementById('add-remove-buttons');
@@ -21,26 +19,33 @@ function found(item_size){
 
 		articles = document.getElementById('size').options;
 
-		for (var i = 0; i < articles.length; i++){ 
-			if (articles[i].innerText.toLowerCase() == item_size.toLowerCase()){
-				var value = articles[i].value;
-				no_size = false;
-			}
-		}
-
-		if (no_size == false){
-
-			document.getElementsByName('size')[0].value = value;
-
+		if (articles == undefined || item_size.toLowerCase() == 'none'){
 			chrome.runtime.sendMessage({msg:'add', url: url}, function submitForm(par){  
 				console.log(par); 
 			});
 		}
 		else{
-			chrome.runtime.sendMessage({msg:'error', error: 'No size.'}, function sendResponse(error){ 
-				console.log(error); 
-				alert(error);
-			});
+			for (var i = 0; i < articles.length; i++){ 
+				if (articles[i].innerText.toLowerCase() == item_size.toLowerCase()){
+					var value = articles[i].value;
+					no_size = false;
+				}
+			}
+
+			if (no_size == false){
+
+				document.getElementsByName('size')[0].value = value;
+
+				chrome.runtime.sendMessage({msg:'add', url: url}, function submitForm(par){  
+					console.log(par); 
+				});
+			}
+			else{
+				chrome.runtime.sendMessage({msg:'error', error: 'No size.'}, function sendResponse(error){ 
+					console.log(error); 
+					alert(error);
+				});
+			}
 		}
 	}
 }

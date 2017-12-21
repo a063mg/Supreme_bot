@@ -9,7 +9,8 @@ document.getElementById('settings').onclick = () => window.location = 'settings.
 
 function cop(){
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-  	chrome.runtime.sendMessage({msg:'go', url: 'http://www.supremenewyork.com/shop/all/accessories', id: tabs[0].id}, function submitForm(par){  console.log(par); });
+  	var url = 'http://www.supremenewyork.com/shop/all/' + JSON.parse(localStorage["items_data"])["category"];
+  	chrome.runtime.sendMessage({msg:'go', url: url, id: tabs[0].id}, function submitForm(par){  console.log(par); });
   	console.log(1);
   });
 }
