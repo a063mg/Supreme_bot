@@ -6,7 +6,6 @@ addToCart = (tabId) => {
 		var next_url = 'http://www.supremenewyork.com/shop/all/' + obj[Object.keys(obj)[1]]["category"];
 	}
 	chrome.tabs.executeScript(tabId, { file: "jquery-3.2.1.min.js"});
-<<<<<<< HEAD
 	chrome.tabs.executeScript(tabId, { file: "addtocart.js"}, function(){
 	chrome.tabs.executeScript(tabId, {
 			code: 'submitForm('+tabId+','+data+','+'"'+next_url+'"'+');'
@@ -16,12 +15,10 @@ addToCart = (tabId) => {
 		delete obj[index];
 		localStorage["data"] = JSON.stringify(obj);
 	}
-=======
 	chrome.tabs.executeScript(tabId, { file: "addtocart.js"});
 	chrome.runtime.sendMessage({msg:'checkout', url: 'https://www.supremenewyork.com/checkout'}, function submitForm(par){  
 		console.log(par); 
 	});
->>>>>>> 39b6e6f245fc944449253bbdb17eb8c4b837bb71
 }
 
 updateTab = (tabId, url, callback) => {
