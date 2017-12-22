@@ -1,6 +1,9 @@
 addToCart = (tabId) => {
 	chrome.tabs.executeScript(tabId, { file: "jquery-3.2.1.min.js"});
 	chrome.tabs.executeScript(tabId, { file: "addtocart.js"});
+	chrome.runtime.sendMessage({msg:'checkout', url: 'https://www.supremenewyork.com/checkout'}, function submitForm(par){  
+		console.log(par); 
+	});
 }
 
 updateTab = (tabId, url, callback) => {
