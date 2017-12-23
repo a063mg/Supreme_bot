@@ -26,8 +26,14 @@ var JsonObj = {"name": name, "email": email, "phone": phone, "address": address,
 
 localStorage["customer_data"] = JSON.stringify(JsonObj);
 
-var JsonObj = {"keyword": keyword, "category": category, "color": color, "size": size};
+localStorage["more_than_one"] = false;
 
-localStorage["items_data"] = JSON.stringify(JsonObj);
+// var JsonObj = {"keyword": keyword, "category": category, "color": color, "size": size};
+
+// localStorage["items_data"] = JSON.stringify(JsonObj);
+
+var JsonObj = { 0: {"keyword": keyword, "category": category, "color": color, "size": size}, 1: {"keyword": "Washed Regular Jeans", "category": "pants", "color": "Dusty Rose", "size": "34"}};
+
+localStorage["data"] = JSON.stringify(JsonObj);
 
 };
