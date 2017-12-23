@@ -11,14 +11,10 @@ addToCart = (tabId) => {
 			code: 'submitForm('+tabId+','+data+','+'"'+next_url+'"'+');'
 		});
 	});
-	if (data > 1){
+	if (data > 0){
 		delete obj[index];
 		localStorage["data"] = JSON.stringify(obj);
 	}
-	chrome.tabs.executeScript(tabId, { file: "addtocart.js"});
-	chrome.runtime.sendMessage({msg:'checkout', url: 'https://www.supremenewyork.com/checkout'}, function submitForm(par){  
-		console.log(par); 
-	});
 }
 
 updateTab = (tabId, url, callback) => {
