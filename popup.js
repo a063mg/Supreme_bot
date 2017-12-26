@@ -23,6 +23,7 @@ $('[id=delete]').click(function(elem){
 	var id = elem.target.getAttribute('name');
 	document.getElementById(id).remove();
 	delete obj[id];
+	Object.keys(obj).forEach(function(item, i, arr) { obj[item]; });
 	localStorage["data"] = JSON.stringify(obj);
 });
 
