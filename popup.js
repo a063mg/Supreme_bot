@@ -21,7 +21,6 @@ loadItems();
 $('[id=delete]').click(function(elem){
 	var obj = JSON.parse(localStorage["data"]);
 	var id = elem.target.getAttribute('name');
-	document.getElementById(id).remove();
 	delete obj[id];
 	new_list = {}
 	Object.keys(obj).forEach(function(item, i, arr) { 
