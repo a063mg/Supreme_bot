@@ -4,7 +4,7 @@ if(page){
   page.addEventListener("click", cop, false);
 }
 
-function updateItems(){
+function loadItems(){
 	var obj = JSON.parse(localStorage["data"]);
 	Object.keys(obj).forEach(function(item, i, arr) {
 		document.getElementById('items_table').innerHTML += '<tr id="'+item+'"><td>'+item+'</td><td>'+obj[item]["keyword"]+'</td><td>'+obj[item]["color"]+'</td><td>'+obj[item]["size"]+'</td><td>'+obj[item]["category"]+'</td><td id="delete" name="'+item+'" style="background: red;">Delete</td></tr>';
@@ -16,14 +16,19 @@ function clear() {
 	window.location = 'popup.html';
 }
 
-updateItems();
+loadItems();
 
 $('[id=delete]').click(function(elem){
 	var obj = JSON.parse(localStorage["data"]);
 	var id = elem.target.getAttribute('name');
 	document.getElementById(id).remove();
 	delete obj[id];
-	localStorage["data"] = JSON.stringify(obj);
+	new_list = {}
+	Object.keys(obj).forEach(function(item, i, arr) { 
+		new_list[i+1] = obj[item];
+	});
+	localStorage["data"] = JSON.stringify(new_list);
+	window.location = 'popup.html';
 });
 
 
