@@ -11,8 +11,11 @@ document.getElementById('submit').onclick = () => {
 	var category = document.getElementById('category').value;
 	var obj = JSON.parse(localStorage["data"]);
 	var index = Object.keys(obj).length;
+	if (index > 3){
+		clear();
+	}
 	if (size == "" || keyword == "" || color == ""){
-		alert('Required');
+		console.log('Required');
 	}
 	else{
 		if (index < 3){
@@ -31,12 +34,16 @@ document.getElementById('submit').onclick = () => {
 	}
 };
 
-document.getElementById('clear').onclick = () => { 
+function clear() {
 	localStorage["data"] = JSON.stringify({});
 	document.getElementById('size').value = ""
 	document.getElementById('keyword').value = "";
 	document.getElementById('color').value = "";
 	document.getElementById('category').value = 'jackets';
 	document.getElementById('items_info').innerText = "Item #1";
+}
+
+document.getElementById('clear').onclick = () => { 
+	clear();
 
 };

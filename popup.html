@@ -1,12 +1,21 @@
 <html>
 <head>
-	<link rel="stylesheet" href="styles/reset.css">
 	<link rel="stylesheet" href="styles/style.css">
 	 <script src="jquery-3.2.1.min.js"></script>
 </head>
 <body>
 <center><div class="header">Supreme Bot</div></center>
-<button id="button">Go</button><button id='settings'>Settings</button><button id='items'>Items</button>
+<button id="button">Go</button><button id='settings'>Settings</button><button id='items'>Items</button><button id='view'>View</button><button id='clear'>Clear</button>
+<table id="items_table" border="1">
+   <caption>Your items:</caption>
+   <tr>
+    <th>No</th>
+    <th>Keyword</th>
+    <th>Color</th>
+    <th>Size</th>
+    <th>Category</th>
+   </tr>
+  </table>
 <script src="popup.js"></script>
 </body>
 </html>
