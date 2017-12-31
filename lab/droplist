@@ -1,0 +1,33 @@
+<?php
+include 'dom/simple_html_dom.php';
+
+$html = file_get_html('https://www.supremecommunity.com/season/fall-winter2017/droplist/2017-12-07/');
+echo $html;
+$arr = $html->find('div.card-details');
+
+$img = array();
+
+foreach ($arr as $block){
+	$url = $block->find('img',0)->src;
+	$text = $block->find('h5.item-details',0)->innertext;
+	$price = $block->find('.label-price',0)->innertext;
+	$price = str_replace(' ', '', $price);
+	$img[$i] = array("https://www.supremecommunity.com".$url,$text,$price);
+	$i = $i + 1;
+}
+
+$a = fopen('test.csv', 'w+');
+fwrite($a, '');
+
+$i = 0;
+
+$fp = fopen('test.csv', 'w');
+
+foreach($img as $tag){
+	foreach($tag as $arr){
+		fwrite($a, $arr);
+		fwrite($a, ';');
+	}
+	fwrite($a, "\n");
+}
+?>

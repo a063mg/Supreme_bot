@@ -9,6 +9,9 @@ document.getElementById('submit').onclick = () => {
 	var keyword = document.getElementById('keyword').value;
 	var color = document.getElementById('color').value;
 	var category = document.getElementById('category').value;
+	if (localStorage["data"] == undefined) {
+		localStorage["data"] = JSON.stringify({});
+	}
 	var obj = JSON.parse(localStorage["data"]);
 	var index = Object.keys(obj).length;
 	if (index > 3){
