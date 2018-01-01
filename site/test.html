@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+   <script src="jquery-3.2.1.min.js"></script>
+	 
+	 <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="album text-muted">
+        <div class="container">
+          <div class="row" id="row">
+            
+          </div>
+	     </div>
+    </div>
+    
+    <div id="layer" class="layer">
+        <center><div class="alert alert-danger" role="alert">Fill both fields!</div></center>
+    	<div class="preview" >
+    		<p class="preview-card-text"></p>
+    		<p class="preview-card-text preview-categoty"></p>
+    			<div class="preview-card">
+        			<img class="rounded preview-image" />
+        			<h1 class="preview-card-price"></h1>
+        			<div class="block">
+	        			<img class="color-sprite" src="photos/droplet.svg" />
+	        			<input type="text" placeholder="Color" class="input" id="input-color" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+	        			<input type="text" placeholder="Size" class="input" id="input-size" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+	        			<img class="color-sprite" src="photos/resize-both.svg">
+        			</div>
+        			<button class="add add-button">Add</button><button id="close" class="close1">Close</button>
+       			</div>
+        </div>
+    </div>
+
+    <script src="site.js"></script>
+
+</body>
+</html>
