@@ -147,6 +147,11 @@ h1{
 	margin-top: 1rem;
 	max-height: 1.5rem;
 }
+.preview-category{
+	font-size: 95%;
+	margin-top: 1rem;
+	max-height: 1.5rem;
+}
 .close1{
 	padding:.25rem .5rem;
 	font-size:.875rem;
