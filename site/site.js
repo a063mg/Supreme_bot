@@ -6,20 +6,22 @@
           var txt = xmlhttp.responseText;
           var arr = txt.split('\n');
           for(var i = 0; i < arr.length; i++){
-              var data = arr[i].split(';');
-              document.getElementById('row').innerHTML += '<div class="card"><img src='+data[0]+' /><p class="card-text">'+data[1]+'</p><p class="hidden category">'+data[3]+'</p><h1 class="card-price">'+data[2]+'</h1><button class="btn1">Add</button></div>';
+              if (arr[i] !== ''){
+                var data = arr[i].split(';');
+                document.getElementById('row').innerHTML += '<div class="card"><img src='+data[0]+' /><p class="card-text">'+data[1]+'</p><p class="hidden category">'+data[3]+'</p><h1 class="card-price">'+data[2]+'</h1><button class="btn1">Add</button></div>';
+              }
           }
         }
       };
       xmlhttp.open("GET","test.csv",true);
       xmlhttp.send();
 
-  		var input1 = document.getElementById("input-size");
+  		var size = document.getElementById("input-size");
   		var danger = document.getElementsByClassName("alert-danger")[0];
       var danger1 = document.getElementsByClassName("alert-danger")[1];
       var success = document.getElementsByClassName("alert-success")[0];
       var lert1 = document.getElementsByClassName("not")[0];
-  		var input2 = document.getElementById("input-color");
+  		var color = document.getElementById("input-color");
   		var close = document.getElementById("close");
   		var layer = document.getElementById("layer");
 
@@ -27,20 +29,20 @@
 
   		close.onclick = function() { $("#layer").fadeOut("slow") }
 
-  		input1.oninput = function() {
-  			if (input1.value == ""){
-  				input1.style.borderColor = "rgb(255, 0, 84)";
+  		size.oninput = function() {
+  			if (size.value == ""){
+  				size.style.borderColor = "rgb(255, 0, 84)";
   			}
   			else{
-  				input1.style.borderColor = "#28a745";
+  				size.style.borderColor = "#28a745";
   			}
   		};
-  		input2.oninput = function() {
-  			if (input2.value == ""){
-  				input2.style.borderColor = "rgb(255, 0, 84)";
+  		color.oninput = function() {
+  			if (color.value == ""){
+  				color.style.borderColor = "rgb(255, 0, 84)";
   			}
   			else{
-  				input2.style.borderColor = "#28a745";
+  				color.style.borderColor = "#28a745";
   			}
   		};
 
@@ -51,10 +53,10 @@
           danger.style.display = 'none';
           success.style.display = 'none';
           danger1.style.display = 'none';
-          input1.value = "";
-          input1.style.borderColor = "rgb(255, 0, 84)";
-          input2.value = "";
-          input2.style.borderColor = "rgb(255, 0, 84)";
+          size.value = "";
+          size.style.borderColor = "rgb(255, 0, 84)";
+          color.value = "";
+          color.style.borderColor = "rgb(255, 0, 84)";
           
           var text = id.getElementsByClassName("card-text")[0].innerText;
           var price = id.getElementsByClassName("card-price")[0].innerText;
@@ -69,7 +71,7 @@
           $("#layer").fadeIn("slow")
         });
        $('.add-button').click(function(elem){ 
-            if (input2.value == "" ||  input1.value == ""){
+            if (color.value == "" ||  size.value == ""){
                 danger.style.display = 'block';
                 success.style.display = 'none';
                 danger1.style.display = 'none';
@@ -80,6 +82,7 @@
               }
               var obj = JSON.parse(localStorage["data"]);
               var index = Object.keys(obj).length;
+
               if (index > 3){
                 localStorage["data"] = JSON.stringify({});
               }
@@ -91,7 +94,7 @@
 
                 var index = index+1;
 
-                obj[index] = {"keyword": keyword, "category": category, "color": input2.value, "size": input1.value};
+                obj[index] = {"keyword": keyword, "category": category, "color": color.value, "size": size.value};
                 localStorage["data"] = JSON.stringify(obj);
                 danger.style.display = 'none';
                 danger1.style.display = 'none';

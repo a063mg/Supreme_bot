@@ -27,6 +27,7 @@ updateTab = (tabId, url, callback) => {
 		})
 	})
 };
+
 check = (tabId) => {
 	data = localStorage["customer_data"];
 	chrome.tabs.executeScript(tabId, { file: "checkout.js"}, function(){
@@ -91,3 +92,16 @@ chrome.extension.onMessage.addListener(
         		break
        	}
 });
+
+
+function removeImages() {
+	chrome.webRequest.onBeforeRequest.addListener(
+		listenerHandle,
+		{
+			urls: [
+			   '*://*.cloudfront.net/*.jpg',
+			   '*://*.cloudfront.net/*.png'
+			]
+		},
+		['blocking']
+	)

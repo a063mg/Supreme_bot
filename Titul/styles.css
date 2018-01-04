@@ -1,0 +1,52 @@
+.container{
+	margin: auto;
+	align-self: center;
+	text-align: center;
+	margin-top: 2rem;
+}
+.card1{
+	width: 50%;
+	display: inline-block;
+}
+.form-group{
+	margin-top: 1rem;
+}
+.form-control{
+	width: 90%;
+	display: inline-block;
+	color: #23272b;
+	font-size: 1.1rem;
+}
+select{
+	padding: 0;
+}
+.text-center{
+	margin-left: 30.666667%;
+}
+.separator{
+	font-size: 1.1rem;
+	border-bottom: 3px solid #23272b;
+	width: 100%;
+	color: #23272b;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+.form-check-label{
+	color: #23272b;
+	font-size: 1.1rem;
+}
+.lbl{
+	width:30.666667%;
+	padding-right:15px;
+	padding-left:15px;
+	font-size: 1.25rem;
+	color: #23272b;
+}
+.colum{
+	width: 69.333333%;
+	text-align: left;
+}
+.header-text{
+	font-size: 175%;
+	align-self: center;
+}

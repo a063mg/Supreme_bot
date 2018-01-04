@@ -11,3 +11,48 @@
 	color: rgb(255, 70, 92);
 	background-color: white;
 }
+h1{
+	margin-bottom:.5rem;
+	display: inline-block;
+	font-family:inherit;
+	font-weight:500;
+	line-height:1.2;
+	color:inherit;
+	font-size:2rem;
+	margin: auto;
+}
+.btn1{
+	padding:0.25rem 0.5rem;
+	margin: auto;
+	font-size:.875rem;
+	line-height:1.5rem;
+	border-radius:0.2rem;
+	color: rgb(255, 0, 84);
+	background-color: white;
+	border-color: rgb(255, 0, 84);
+	background-color:transparent;
+	background-image:none;
+	margin-top: 0.5rem;
+	color:#23272b;
+	border-color:#1d2124;
+	transition: 0.3s background-color, 0.3s color, 0.3s border-color;
+	align-self: center;
+	width: 80%;
+}
+.btn1:hover{
+	color: #fff;
+	background-color: rgb(255, 0, 84);
+	border-color: rgb(255, 0, 84);
+	background-color: #23272b;
+	border-color: #23272b;
+}
+.btn1:focus{
+	box-shadow:0 0 0 .2rem rgba(255, 0, 84,.5);
+}
+.block{
+	width: 100%;
+	margin: auto;
+	align-self: center;
+	text-align: center;
+	height: auto;
+}

@@ -27,6 +27,7 @@ $('[id=delete]').click(function(elem){
 	if (localStorage["data"] == undefined) {
 		localStorage["data"] = JSON.stringify({});
 	}
+	else{
 		var obj = JSON.parse(localStorage["data"]);
 		var id = elem.target.getAttribute('name');
 		delete obj[id];
@@ -36,6 +37,7 @@ $('[id=delete]').click(function(elem){
 		});
 		localStorage["data"] = JSON.stringify(new_list);
 		window.location = 'popup.html';
+	}
 });
 
 
@@ -55,9 +57,11 @@ function cop(){
   	if (localStorage["data"] == undefined) {
 		localStorage["data"] = JSON.stringify({});
 	}
+	else{
 	    var obj = JSON.parse(localStorage["data"]);
 	  	var url = 'http://www.supremenewyork.com/shop/all/' + obj[Object.keys(obj)[0]]["category"];
 	  	chrome.runtime.sendMessage({msg:'go', url: url, id: tabs[0].id}, function submitForm(par){  console.log(par); });
 	  	console.log(1);
+	  }
   });
 }
