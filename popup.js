@@ -41,7 +41,7 @@ $('[id=delete]').click(function(elem){
 });
 
 
-document.getElementById('settings').onclick = () => window.location = 'settings.html';
+document.getElementById('settings').onclick = () => window.open('settings/settings.html');
 document.getElementById('items').onclick = () => window.location = 'items.html';
 document.getElementById('view').onclick = () => {
 	window.open("/site/test.html");

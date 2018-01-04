@@ -12,10 +12,20 @@
 	margin-top: 1rem;
 }
 .form-control{
+	display:block;
+	padding:.375rem .75rem;
+	font-size:1rem;
+	line-height:1.5;
+	background-clip:padding-box;
+	border:1px solid #ced4da;
+	border-radius:.25rem;
 	width: 90%;
 	display: inline-block;
 	color: #23272b;
 	font-size: 1.1rem;
+}
+.form-control:focus{
+	color: #343a40;
 }
 select{
 	padding: 0;
