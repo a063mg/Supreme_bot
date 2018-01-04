@@ -17,11 +17,32 @@ addToCart = (tabId) => {
 	}
 }
 
+var listenerHandle = function() {
+	return { cancel: true }
+}
+
+function removeImages() {
+	chrome.webRequest.onBeforeRequest.addListener(
+		listenerHandle,
+		{
+			urls: [
+			   '*://*.cloudfront.net/*.jpg',
+			   '*://*.cloudfront.net/*.png'
+			]
+		},
+		['blocking']
+	)
+}
+
+
 updateTab = (tabId, url, callback) => {
 	chrome.tabs.update(tabId, { url: url }, () => {
 		chrome.tabs.onUpdated.addListener(function listenTab(tabnumber, info, tab) {
 			if (tab.url.indexOf(url) > -1 && info.status == "complete") {
-				chrome.tabs.onUpdated.removeListener(listenTab)
+				if (JSON.parse(localStorage["customer_data"])["removeImages"] == true){
+					removeImages();
+				}
+				chrome.tabs.onUpdated.removeListener(listenTab);
 				callback(tabId);
 			}
 		})
@@ -92,16 +113,3 @@ chrome.extension.onMessage.addListener(
         		break
        	}
 });
-
-
-function removeImages() {
-	chrome.webRequest.onBeforeRequest.addListener(
-		listenerHandle,
-		{
-			urls: [
-			   '*://*.cloudfront.net/*.jpg',
-			   '*://*.cloudfront.net/*.png'
-			]
-		},
-		['blocking']
-	)
