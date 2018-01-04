@@ -17,17 +17,18 @@ function found(item_size){
 	else{
 		no_size = true;
 
-		articles = document.getElementById('size').options;
+		articles = document.getElementById('size');
 
-		if (articles == undefined || item_size.toLowerCase() == 'none'){
+		if (articles == null || articles.options == undefined  || item_size.toLowerCase() == 'none' || item_size.toLowerCase() == 'any'){
 			chrome.runtime.sendMessage({msg:'add', url: url}, function submitForm(par){  
 				console.log(par); 
 			});
 		}
 		else{
-			for (var i = 0; i < articles.length; i++){ 
-				if (articles[i].innerText.toLowerCase() == item_size.toLowerCase()){
-					var value = articles[i].value;
+
+			for (var i = 0; i < articles.options.length; i++){ 
+				if (articles.options[i].innerText.toLowerCase() == item_size.toLowerCase()){
+					var value = articles.options[i].value;
 					no_size = false;
 				}
 			}

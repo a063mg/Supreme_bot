@@ -18,7 +18,8 @@
         "tabs",
         "http://*/*", 
         "https://*/*",
-        "file:///*"
+        "file:///*",
+        "webRequestBlocking"
     ],
     "content_scripts": [
     {

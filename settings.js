@@ -2,11 +2,11 @@ document.getElementById('back').onclick = () => window.location = 'popup.html';
 
 document.getElementById('submit').onclick = () => {
 
-var size = document.getElementById('size').value;
+// var size = document.getElementById('size').value;
 // localStorage["name"] = document.getElementById('name').value
-var keyword = document.getElementById('keyword').value;
-var color = document.getElementById('color').value;
-var category = document.getElementById('category').value;
+// var keyword = document.getElementById('keyword').value;
+// var color = document.getElementById('color').value;
+// var category = document.getElementById('category').value;
 var name = document.getElementById('name').value;
 var email = document.getElementById('email').value;
 var phone = document.getElementById('phone').value;
@@ -26,8 +26,14 @@ var JsonObj = {"name": name, "email": email, "phone": phone, "address": address,
 
 localStorage["customer_data"] = JSON.stringify(JsonObj);
 
-var JsonObj = {"keyword": keyword, "category": category, "color": color, "size": size};
+// localStorage["more_than_one"] = false;
 
-localStorage["items_data"] = JSON.stringify(JsonObj);
+// var JsonObj = {"keyword": keyword, "category": category, "color": color, "size": size};
+
+// localStorage["items_data"] = JSON.stringify(JsonObj);
+
+// var JsonObj = { 0: {"keyword": keyword, "category": category, "color": color, "size": size}, 1: {"keyword": "Washed Regular Jeans", "category": "pants", "color": "Dusty Rose", "size": "34"}};
+
+// localStorage["data"] = JSON.stringify(JsonObj);
 
 };

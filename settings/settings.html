@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+   	<script src="../jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<center><div class="alert alert-danger" role="alert">Fill all fields!</div></center>
+	<center><div class="alert alert-success" role="alert">Success!</div></center>
+
+	<div class="container">
+	<p class="header-text">Settings</p>
+		<div class="row" id="row">
+			<div class="card1" >
+			<b class="text-center">billing/shipping information</b>
+			<div class="form-group row">
+				    <label for="name" id="input-name" class="lbl">Name</label>
+				    <div class="colum">
+				    	<input class="form-control" name="name" id="name" placeholder="Alekseev Artem">
+				      	<label id="input-name" for="name">Your full name</label>
+				    </div>
+				  </div>
+				<div class="form-group row">
+				    <label for="email" id="input-email" class="lbl">Email</label>
+				    <div class="colum">
+				      <input type="email" name="email" class="form-control" id="email" placeholder="email@example.com">
+				      <label for="email">Your email address</label>
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="phone" id="input-phone" class="lbl">Phone</label>
+				    <div class="colum">
+				      <input class="form-control" name="phone" id="phone" placeholder="+7(905) 745-51-25">
+				      <label for="phone">Your phone number</label>
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="address" id="input-address" class="lbl">Address</label>
+				    <div class="colum">
+				      <input class="form-control" name="address" id="address" placeholder="Nikitskaya st.">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <div class="colum" style="margin-left: 30.666667%;">
+				      <input class="form-control" style=" margin-right: 5%; float: left; width: 42.5%;" name="address1" id="address1" placeholder="d.17k5 kv.12">  
+				      <input class="form-control" style=" width: 42.5%;" name="address2" id="address2" placeholder="Address2">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="city" id="input-city" class="lbl">City</label>
+				    <div class="colum">
+				      <input class="form-control" name="city" id="city" placeholder="Moscow">
+				      <label for="city">Your city</label>
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="zip" id="input-zip" class="lbl">Country</label>
+				    <div class="colum">
+				    	<input class="form-control" style=" margin-right: 5%; float: left; width: 42.5%;" name="zip" id="zip" placeholder="113623">
+				    	<select id="state" name="state" class="form-control" style="width: 42.5%;">
+  							<option value="NB">UK (N. IRELAND)</option>
+							<option value="">-</option>
+							<option value="AT">AUSTRIA</option>
+							<option value="BY">BELARUS</option>
+							<option value="BE">BELGIUM</option>
+							<option value="BG">BULGARIA</option>
+							<option value="HR">CROATIA</option>
+							<option value="CZ">CZECH REPUBLIC</option>
+							<option value="DK">DENMARK</option>
+							<option value="EE">ESTONIA</option>
+							<option value="FI">FINLAND</option>
+							<option value="FR">FRANCE</option>
+							<option value="DE">GERMANY</option>
+							<option value="GR">GREECE</option>
+							<option value="HU">HUNGARY</option>
+							<option value="IS">ICELAND</option>
+							<option value="IE">IRELAND</option>
+							<option value="IT">ITALY</option>
+							<option value="LV">LATVIA</option>
+							<option value="LT">LITHUANIA</option>
+							<option value="LU">LUXEMBOURG</option>
+							<option value="MC">MONACO</option>
+							<option value="NL">NETHERLANDS</option>
+							<option value="NO">NORWAY</option>
+							<option value="PL">POLAND</option>
+							<option value="PT">PORTUGAL</option>
+							<option value="RO">ROMANIA</option>
+							<option value="RU">RUSSIA</option>
+							<option value="SK">SLOVAKIA</option>
+							<option value="SI">SLOVENIA</option>
+							<option value="ES">SPAIN</option>
+							<option value="SE">SWEDEN</option>
+							<option value="CH">SWITZERLAND</option>
+							<option value="TR">TURKEY</option>
+						</select>
+				    </div>
+				  </div>
+			</div>
+
+			<div class="card1">
+				<b class="text-center">credit card information</b>
+				<div class="form-group row">
+				    <label for="card_type" id="input-card_type" class="lbl">Card type</label>
+				    <div class="colum">
+					    <select id="card_type" name="card_type" class="form-control">
+					      	<option value="american_express">American Express</option>
+							<option value="master">Mastercard</option>
+							<option value="solo">Solo</option>
+							<option value="paypal">PayPal</option>
+						</select>
+						<label for="card_type">Your card brand</label>
+				    </div>
+				</div>
+				<div class="form-group row">
+				    <label for="card_number" id="input-card_number" class="lbl">Card number</label>
+				    <div class="colum">
+				      <input class="form-control" name="inputNumber" id="card_number" placeholder="Number">
+				      <label for="card_number">Your card number</label>
+				    </div>
+				</div>
+				<div class="form-group row">
+				    <label for="card_month" id="input-cvv" class="lbl">Card info</label>
+				    <div class="colum">
+				      <select class="form-control" style="float: left; width: 20%; padding: 0;" name="card_month" id="card_month"> 
+				      	<option value="01">01</option>
+				      	<option value="02">02</option>
+						<option value="03">03</option>
+						<option value="04">04</option>
+						<option value="05">05</option>
+						<option value="06">06</option>
+						<option value="07">07</option>
+						<option value="08">08</option>
+						<option value="09">09</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+				      </select>
+				      <select class="form-control" style="width: 25%; padding: 0;" name="card_year" id="card_year">
+				      	<option value="2018">2018</option>
+						<option value="2019">2019</option>
+						<option value="2020">2020</option>
+						<option value="2021">2021</option>
+						<option value="2022">2022</option>
+						<option value="2023">2023</option>
+						<option value="2024">2024</option>
+						<option value="2025">2025</option>
+						<option value="2026">2026</option>
+						<option value="2027">2027</option>
+						<option value="2028">2028</option></select>
+				      <input class="form-control" style="width: 20%; float: right; margin-right: 10%;" name="cvv" id="cvv" placeholder="545">
+				    </div>
+				</div>
+				<div class="separator">
+					<a>Terms</a>
+				</div>
+				<div class="form-group row">
+				    <label for="reCapcha" class="lbl">Remove</label>
+				    <div class="colum">
+					    <div class="form-check">
+	  						<input type="checkbox" id="reCapcha" value="remove">
+	  						<label class="form-check-label" for="reCapcha">
+	  							reCapcha
+							</label>
+							<div style="float: right; margin-right: 10%;">
+								<input type="checkbox" id="removeImages" value="option1"">
+		  						<label class="form-check-label" for="removeImages">
+		  							All images
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="add-block">
+			<button class="add add-button" id="save-button">Save</button>
+		</div>
+	</div>
+
+	<script src="settings.js"></script>
+</body>
+</html>
