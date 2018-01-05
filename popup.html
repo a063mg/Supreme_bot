@@ -10,18 +10,23 @@
   <button id="button" class="btn1">Go</button>
   <button class="btn1" id='settings'>Settings</button>
   <!-- <button class="btn1" id='items'>Items</button> -->
-  <button class="btn1" id='view'>View</button>
+  <button class="btn1" id='view'>Droplist</button>
   <button class="btn1" id='clear'>Clear</button></div>
-  <center><caption>Your items:</caption><table style="margin-top: 1rem;"  id="items_table" border="1">
-     <tr>
-      <th>No</th>
-      <th>Keyword</th>
-      <th>Color</th>
-      <th>Size</th>
-      <th>Category</th>
-     </tr>
-  </table></center>
-
+  <center><table style="margin-top: 1rem;" class="table table-dark">
+  <thead>
+    <tr id="tr">
+      <th scope="col">#</th>
+      <th scope="col">Keyword</th>
+      <th scope="col">Color</th>
+      <th scope="col">Size</th>
+      <th scope="col">Category</th>
+      <th style="text-align: center;" scope="col">X</th>
+    </tr>
+  </thead>
+  <tbody id="items_table">
+    
+  </tbody>
+</table></center>
 <script src="popup.js"></script>
 </body>
 </html>

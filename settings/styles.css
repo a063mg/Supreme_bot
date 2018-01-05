@@ -1,13 +1,26 @@
 .container{
 	margin: auto;
 	align-self: center;
-	margin-top: 2.75rem;
 	text-align: center;
+	margin-top: 1rem;
+}
+.color-sprite{
+	width: 5%;
+	transition: 0.3s opacity;
+}
+.color-sprite:hover{
+	opacity: 0.5;
 }
 .alert{
 	position: absolute;
 	width: 100%;
 	top: 0;
+}
+.nav-link{
+	cursor: pointer;
+}
+.nav-item{
+	font-size: 130%;
 }
 .add{
 	padding:.25rem .5rem;

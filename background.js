@@ -40,7 +40,11 @@ updateTab = (tabId, url, callback) => {
 		chrome.tabs.onUpdated.addListener(function listenTab(tabnumber, info, tab) {
 			if (tab.url.indexOf(url) > -1 && info.status == "complete") {
 				if (JSON.parse(localStorage["customer_data"])["removeImages"] == true){
+					// chrome.tabs.executeScript(tabId, { file: "replaceImages.js"});
 					removeImages();
+				}
+				else{
+					chrome.webRequest.onBeforeRequest.removeListener(listenerHandle);
 				}
 				chrome.tabs.onUpdated.removeListener(listenTab);
 				callback(tabId);
