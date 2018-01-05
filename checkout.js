@@ -1,14 +1,16 @@
 function checkout(data){
-	$(".g-recaptcha").remove()
+	if (data["removeCapcha"] == true){
+		$(".g-recaptcha").remove()
+	}
 	$('#order_billing_name').val(data['name'])
 	$('#order_email').val(data['email'])
 	$('#order_tel').val(data['phone'])
 	$('#bo').val(data['address'])
-	$('#oba3').val(data['address2'])
-	$('#order_billing_address_3').val(data['address3'])
-	$('#order_billing_zip').val(data['postcode'])
+	$('#oba3').val(data['address1'])
+	$('#order_billing_address_3').val(data['address2'])
+	$('#order_billing_zip').val(data['zip'])
 	$('#order_billing_city').val(data['city'])
-	$('#order_billing_country').val(data["country"])
+	$('#order_billing_country').val(data["state"])
 	$('#credit_card_type').val(data['card_type'])
 	$('#cnb').val(data['card_number'])
 	$('#vval').val(data['cvv'])

@@ -1,21 +1,32 @@
 <html>
 <head>
-	<link rel="stylesheet" href="styles/style.css">
-	 <script src="jquery-3.2.1.min.js"></script>
+   <link rel="stylesheet" href="styles/style.css">
+   <script src="jquery-3.2.1.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 <body>
-<center><div class="header">Supreme Bot</div></center>
-<button id="button">Go</button><button id='settings'>Settings</button><button id='items'>Items</button><button id='view'>View</button><button id='clear'>Clear</button>
-<table id="items_table" border="1">
-   <caption>Your items:</caption>
-   <tr>
-    <th>No</th>
-    <th>Keyword</th>
-    <th>Color</th>
-    <th>Size</th>
-    <th>Category</th>
-   </tr>
-  </table>
+  <div class="block"><h1>Supreme Bot</h1></div>
+  <div class="block" style="margin-top: 1rem;">
+  <button id="button" class="btn1">Go</button>
+  <button class="btn1" id='settings'>Settings</button>
+  <!-- <button class="btn1" id='items'>Items</button> -->
+  <button class="btn1" id='view'>Droplist</button>
+  <button class="btn1" id='clear'>Clear</button></div>
+  <center><table style="margin-top: 1rem;" class="table table-dark">
+  <thead>
+    <tr id="tr">
+      <th scope="col">#</th>
+      <th scope="col">Keyword</th>
+      <th scope="col">Color</th>
+      <th scope="col">Size</th>
+      <th scope="col">Category</th>
+      <th style="text-align: center;" scope="col">X</th>
+    </tr>
+  </thead>
+  <tbody id="items_table">
+    
+  </tbody>
+</table></center>
 <script src="popup.js"></script>
 </body>
 </html>

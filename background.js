@@ -17,16 +17,42 @@ addToCart = (tabId) => {
 	}
 }
 
+var listenerHandle = function() {
+	return { cancel: true }
+}
+
+function removeImages() {
+	chrome.webRequest.onBeforeRequest.addListener(
+		listenerHandle,
+		{
+			urls: [
+			   '*://*.cloudfront.net/*.jpg',
+			   '*://*.cloudfront.net/*.png'
+			]
+		},
+		['blocking']
+	)
+}
+
+
 updateTab = (tabId, url, callback) => {
 	chrome.tabs.update(tabId, { url: url }, () => {
 		chrome.tabs.onUpdated.addListener(function listenTab(tabnumber, info, tab) {
 			if (tab.url.indexOf(url) > -1 && info.status == "complete") {
-				chrome.tabs.onUpdated.removeListener(listenTab)
+				if (JSON.parse(localStorage["customer_data"])["removeImages"] == true){
+					// chrome.tabs.executeScript(tabId, { file: "replaceImages.js"});
+					removeImages();
+				}
+				else{
+					chrome.webRequest.onBeforeRequest.removeListener(listenerHandle);
+				}
+				chrome.tabs.onUpdated.removeListener(listenTab);
 				callback(tabId);
 			}
 		})
 	})
 };
+
 check = (tabId) => {
 	data = localStorage["customer_data"];
 	chrome.tabs.executeScript(tabId, { file: "checkout.js"}, function(){
