@@ -1,4 +1,6 @@
+var i = 0;
 function submitForm(tabId, data, next_url){  
+  i = i + 1;
   $.ajax({ type: 'POST', url: $('#cart-addf').attr('action'), dataType: 'json', data: $('#cart-addf').serialize(), success: function(rep) { 
     	if (rep && rep.length) { 
             if (data == 1){
@@ -13,7 +15,9 @@ function submitForm(tabId, data, next_url){
             }
     		} 
     		},error: function() { 
-    			submitForm();
+          if (i < 100){
+    		  	submitForm();
+          }
     			chrome.runtime.sendMessage({msg:'error', error: 'Error while adding item...'}, function submitForm(par){  
   				  console.log(par); 
   			  });

@@ -1,53 +1,16 @@
+$('.nav-link').on('click',function(){
 
-      var xmlhttp = new XMLHttpRequest();
-      var txt = '';
-      xmlhttp.onreadystatechange = function(){
-        if(xmlhttp.status == 200 && xmlhttp.readyState == 4){
-          var txt = xmlhttp.responseText;
-          var arr = txt.split('\n');
-          for(var i = 0; i < arr.length; i++){
-              if (arr[i] !== ''){
-                var data = arr[i].split(';');
-                document.getElementById('row').innerHTML += '<div class="card"><img src='+data[0]+' /><p class="card-text">'+data[1]+'</p><p class="hidden category">'+data[3]+'</p><h1 class="card-price">'+data[2]+'</h1><button class="btn1">Add</button></div>';
-              }
-          }
-        }
-      };
-      xmlhttp.open("GET","test.csv",true);
-      xmlhttp.send();
+//Remove any previous active classes
+$('.nav-link').removeClass('active');
 
-  		var size = document.getElementById("input-size");
-  		var danger = document.getElementsByClassName("alert-danger")[0];
-      var danger1 = document.getElementsByClassName("alert-danger")[1];
-      var success = document.getElementsByClassName("alert-success")[0];
-      var lert1 = document.getElementsByClassName("not")[0];
-  		var color = document.getElementById("input-color");
-  		var close = document.getElementById("close");
-  		var layer = document.getElementById("layer");
+//Add active class to the clicked item
+$(this).addClass('active');
+});
 
-  		// layer.onclick = function() { $("#layer").fadeOut("slow") }
-
-  		close.onclick = function() { $("#layer").fadeOut("slow") }
-
-  		size.oninput = function() {
-  			if (size.value == ""){
-  				size.style.borderColor = "rgb(255, 0, 84)";
-  			}
-  			else{
-  				size.style.borderColor = "#28a745";
-  			}
-  		};
-  		color.oninput = function() {
-  			if (color.value == ""){
-  				color.style.borderColor = "rgb(255, 0, 84)";
-  			}
-  			else{
-  				color.style.borderColor = "#28a745";
-  			}
-  		};
-
-    $(document).ready(function(){
+ $(document).ready(function(){
+        
         $('.btn1').click(function(elem){
+
           var id = elem.target.parentElement;
               
           danger.style.display = 'none';
@@ -70,6 +33,7 @@
 
           $("#layer").fadeIn("slow")
         });
+
        $('.add-button').click(function(elem){ 
             if (color.value == "" ||  size.value == ""){
                 danger.style.display = 'block';
@@ -109,4 +73,54 @@
           }
        });
     });
+ 
+      var xmlhttp = new XMLHttpRequest();
+      var txt = '';
+      xmlhttp.onreadystatechange = function(){
+        if(xmlhttp.status == 200 && xmlhttp.readyState == 4){
+          var txt = xmlhttp.responseText;
+          var arr = txt.split('\n');
+          for(var i = 0; i < arr.length; i++){
+              if (arr[i] !== ''){
+                var data = arr[i].split(';');
+                document.getElementById('row').innerHTML += '<div class="card"><img src='+data[0]+' /><p class="card-text">'+data[1]+'</p><p class="hidden category">'+data[3]+'</p><h1 class="card-price">'+data[2]+'</h1><button class="btn1">Add</button></div>';
+              }
+          }
+        }
+      };
+
+      xmlhttp.open("GET","test.csv",true);
+      xmlhttp.send();
+
+  		var size = document.getElementById("input-size");
+  		var danger = document.getElementsByClassName("alert-danger")[0];
+      var danger1 = document.getElementsByClassName("alert-danger")[1];
+      var success = document.getElementsByClassName("alert-success")[0];
+      var lert1 = document.getElementsByClassName("not")[0];
+  		var color = document.getElementById("input-color");
+  		var close = document.getElementById("close");
+  		var layer = document.getElementById("layer");
+
+  		// layer.onclick = function() { $("#layer").fadeOut("slow") }
+
+  		close.onclick = function() { $("#layer").fadeOut("slow") }
+
+  		size.oninput = function() {
+  			if (size.value == ""){
+  				size.style.borderColor = "rgb(255, 0, 84)";
+  			}
+  			else{
+  				size.style.borderColor = "#28a745";
+  			}
+  		};
+  		color.oninput = function() {
+  			if (color.value == ""){
+  				color.style.borderColor = "rgb(255, 0, 84)";
+  			}
+  			else{
+  				color.style.borderColor = "#28a745";
+  			}
+  		};
+
+
 

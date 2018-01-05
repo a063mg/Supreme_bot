@@ -11,6 +11,13 @@
 	color: rgb(255, 70, 92);
 	background-color: white;
 }
+#delete:{
+	color: rgb(255, 0, 84); cursor: pointer; vertical-align: inherit; margin: auto; transition: 0.5s opacity;
+}
+#delete:hover{
+	color: white!important;
+	background-color: rgb(255, 0, 84);
+}
 h1{
 	margin-bottom:.5rem;
 	display: inline-block;
@@ -33,17 +40,17 @@ h1{
 	background-color:transparent;
 	background-image:none;
 	margin-top: 0.5rem;
-	color:#23272b;
-	border-color:#1d2124;
+	color:white;
+	border-color:white;
 	transition: 0.3s background-color, 0.3s color, 0.3s border-color;
 	align-self: center;
-	width: 80%;
+	width: 90%;
+	display: inline-block;
 }
 .btn1:hover{
-	color: #fff;
+	color: #23272b;
 	background-color: rgb(255, 0, 84);
-	border-color: rgb(255, 0, 84);
-	background-color: #23272b;
+	background-color: white;
 	border-color: #23272b;
 }
 .btn1:focus{
@@ -55,4 +62,14 @@ h1{
 	align-self: center;
 	text-align: center;
 	height: auto;
+	color: white;
+}
+table{
+	cursor: pointer;
+}
+body{
+	background-color: #23272b!important;
+}
+td{
+	vertical-align: inherit!important;
 }

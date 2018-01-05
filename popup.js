@@ -11,7 +11,8 @@ function loadItems(){
 	else{
 		var obj = JSON.parse(localStorage["data"]);
 		Object.keys(obj).forEach(function(item, i, arr) {
-			document.getElementById('items_table').innerHTML += '<tr id="'+item+'"><td>'+item+'</td><td>'+obj[item]["keyword"]+'</td><td>'+obj[item]["color"]+'</td><td>'+obj[item]["size"]+'</td><td>'+obj[item]["category"]+'</td><td id="delete" name="'+item+'" style="background: red;">Delete</td></tr>';
+			document.getElementById('items_table').innerHTML += '<tr id="'+item+'"><td>'+item+'</td><td>'+obj[item]["keyword"]+'</td><td>'+obj[item]["color"]+'</td><td>'+obj[item]["size"]+'</td><td>'+obj[item]["category"]+'</td><td id="delete" name="'+item+'" style="color: rgb(255, 0, 84); border-color: rgb(255, 0, 84); cursor: pointer; vertical-align: inherit; margin: auto; transition: 0.5s color, 0.5s background-color;" >Delete</td></tr>';
+				// document.getElementById('tr').innerHTML += '<th style="text-align: center;" scope="col">X</th>'
 		});
 	}
 }

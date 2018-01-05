@@ -63,6 +63,7 @@ document.getElementById('save-button').onclick = () => {
 	else{
 		$(".alert-danger").css("display", "block");
 		$(".alert-success").css("display", "none");
+		$('.alert-danger').delay(2000).fadeOut("slow");
 	}
 
 };
@@ -71,4 +72,18 @@ $('input').focus(
     function(){
         $(this).css('border-color','#ced4da');
         $('.alert-danger').delay(500).fadeOut("slow");
+});
+
+$('img').click(
+    function(){
+        document.getElementById($(this).attr('alt')).value = "";
+});
+
+$('.nav-link').on('click',function(){
+
+  //Remove any previous active classes
+  $('.nav-link').removeClass('active');
+
+  //Add active class to the clicked item
+  $(this).addClass('active');
 });
