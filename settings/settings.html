@@ -1,7 +1,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-   	<script src="../jquery-3.2.1.min.js"></script>
+   	<script src="../src/jquery-3.2.1.min.js"></script>
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,10 +12,10 @@
 	    <a class="nav-link active" href="/settings/settings.html">Settings</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" href="/site/test.html">Droplist</a>
+	    <a class="nav-link" href="/droplist/droplist.html">Droplist</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" href="">Timer</a>
+	    <a class="nav-link" href="../timer/timer.html">Timer</a>
 	  </li>
 <!-- 	  <li class="nav-item">
 	    <a class="nav-link disabled" href="#">Disabled</a>
@@ -167,10 +167,10 @@
 					<a>Options</a>
 				</div>
 				<div class="form-group row">
-				    <label for="reCapcha" class="lbl">Remove</label>
+				    <label for="reCapcha" style="color: #23272b" class="lbl">Remove</label>
 				    <div class="colum">
 					    <div class="form-check">
-	  						<input type="checkbox" id="reCapcha" value="remove">
+	  						<input  class="custom-control-label" type="checkbox" id="reCapcha" value="remove">
 	  						<label class="form-check-label" for="reCapcha">
 	  							reCapcha
 							</label>
@@ -181,6 +181,15 @@
 								</label>
 							</div>
 						</div>
+					</div>
+				</div>
+				<div class="form-group row">
+				    <label style="color: #23272b" for="reCapcha" class="lbl">Available</label>
+				    <div class="form-check">
+	  						<input  class="custom-control-label" type="checkbox" id="prelook" value="available">
+	  						<label class="form-check-label" for="prelook">
+	  							Preview images
+							</label>
 					</div>
 				</div>
 			</div>

@@ -64,11 +64,44 @@ h1{
 	height: auto;
 	color: white;
 }
+.btn2{
+  padding:.25rem .5rem;
+  font-size:.875rem;
+  line-height:1.5rem;
+  border-radius:.2rem;
+  color: rgb(255, 0, 84);
+  background-color: white;
+  border-color: rgb(255, 0, 84);
+  background-color:transparent;
+  background-image:none;
+  margin-top: 1.2rem!important;
+  margin-bottom:0!important;
+  bottom: 0.5rem;
+  width: 20%;
+  float: right;
+  /*dark
+  /*color:#23272b;*/
+  /*border-color:#1d2124;*/
+  transition: 0.3s background-color, 0.3s color, 0.3s border-color;
+}
+.btn2:hover{
+  color: #fff;
+  background-color: rgb(255, 0, 84);
+  border-color: rgb(255, 0, 84);
+  border-shadow: 0px 0px 0px #000000;
+}
+.btn2:focus{
+  box-shadow:0 0 0 .2rem rgba(255, 0, 84,.5);
+}
+#table{
+	display: none;
+}
 table{
 	cursor: pointer;
 }
 body{
 	background-color: #23272b!important;
+	min-width: 420px;
 }
 td{
 	vertical-align: inherit!important;

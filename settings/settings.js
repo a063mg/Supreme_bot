@@ -53,6 +53,7 @@ document.getElementById('save-button').onclick = () => {
 
 		obj["removeCapcha"] = document.getElementById("reCapcha").checked;
 		obj["removeImages"] = document.getElementById("removeImages").checked;
+		obj["preview"] = document.getElementById("prelook").checked;
 
 		localStorage["customer_data"] = JSON.stringify(obj);
 
@@ -73,7 +74,14 @@ $('input').focus(
         $(this).css('border-color','#ced4da');
         $('.alert-danger').delay(500).fadeOut("slow");
 });
-
+$("input").on("input", function(e) {
+  if ($(e.target).val() !== ""){
+  	$('#input-' + $(e.target).attr('id')).css('color','#23272b');
+  }
+  else{
+  	$('#input-' + $(e.target).attr('id')).css("color", "#dc3545"); 
+  }
+});
 $('img').click(
     function(){
         document.getElementById($(this).attr('alt')).value = "";
@@ -87,3 +95,5 @@ $('.nav-link').on('click',function(){
   //Add active class to the clicked item
   $(this).addClass('active');
 });
+
+$("body").fadeIn(1500);

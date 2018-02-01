@@ -1,18 +1,18 @@
 <html>
 <head>
    <link rel="stylesheet" href="styles/style.css">
-   <script src="jquery-3.2.1.min.js"></script>
+   <script src="src/jquery-3.2.1.min.js"></script>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 <body>
-  <div class="block"><h1>Supreme Bot</h1></div>
+  <div class="block"><h1>Supreme Bot</h1><p style="position: absolute; top: 10px; right: 0;" class="text-danger">Avaliable: 385 days.</p></div>
   <div class="block" style="margin-top: 1rem;">
   <button id="button" class="btn1">Go</button>
   <button class="btn1" id='settings'>Settings</button>
   <!-- <button class="btn1" id='items'>Items</button> -->
   <button class="btn1" id='view'>Droplist</button>
-  <button class="btn1" id='clear'>Clear</button></div>
-  <center><table style="margin-top: 1rem;" class="table table-dark">
+  <button class="btn1" style="margin-bottom: 1rem;" id='clear'>Clear</button></div>
+  <center><table id="table" style="margin-top: 1rem;" class="table table-dark">
   <thead>
     <tr id="tr">
       <th scope="col">#</th>
@@ -27,6 +27,7 @@
     
   </tbody>
 </table></center>
+<button id="submit" class="btn2">Exit</button>
 <script src="popup.js"></script>
 </body>
 </html>

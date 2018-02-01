@@ -26,10 +26,10 @@
       "matches": [
         "<all_urls>"
       ],
-      "js": ["jquery-3.2.1.min.js", "popup.js"]
+      "js": ["src/jquery-3.2.1.min.js", "popup.js"]
     }
   ],
     "background": {
-        "scripts": ["background.js", "background.html", "jquery-3.2.1.min.js"]
+        "scripts": ["background.js", "background.html", "src/jquery-3.2.1.min.js"]
     }
 }
