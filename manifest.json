@@ -1,14 +1,19 @@
 {
     "manifest_version": 2,
  
-    "name": "GTmetrix Analyzer Plugin",
-    "description": "This extension will analyze a page using GTmetrix",
-    "version": "1.0",
+    "name": "Supreman",
+    "description": "This bot could increase chanse of success on Supreme drops.",
+    "version": "1.0.1",
+    "icons": {
+        "256": "icon.png"
+    },
  
     "browser_action": {
         "default_icon": "icon.png",
-        "default_popup": "popup.html"
+        "default_title" : "SupremanBot",
+        "default_popup": "Password/auth.html"
     },
+
     "permissions": [
         "http://www.google.com/",
         "activeTab",

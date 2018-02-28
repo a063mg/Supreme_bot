@@ -20,13 +20,23 @@ $(this).addClass('active');
               }
           }
           $(document).ready(function(){
+              $('img').tooltipster({
+                theme: 'tooltipster-noir'
+              });
+              // $('.row').isotope({ filter: '*', layoutMode: "fitRows"});
+              setTimeout(resize, 700);
               $("body").fadeIn(1500);
+              $("#full-screen").fadeOut(500)
+              $('.circle-loader').toggleClass('load-complete');
+              $('.checkmark').toggle();
 
               // $("body").click(function(elem){
               //   $('.row').isotope({ filter: '.jackets' });
               //   resize()
               // });
-              
+              if (localStorage["customer_data"] == undefined){
+                localStorage["customer_data"] = JSON.stringify({"previev": true});
+              }
               if (JSON.parse(localStorage["customer_data"])["preview"] == true){
                 $('.card img').click(function(elem){
                   console.log(elem.target.src);
@@ -41,6 +51,39 @@ $(this).addClass('active');
 
               $('.close-preview-look').click(function(elem){
                   $('#g').fadeOut("slow");
+              });
+
+              $('#jackets').click(function(elem){
+                $('.row').isotope({ filter: '.jackets', layoutMode: "fitRows"});
+                setTimeout(resize, 700);
+              });
+              $('#all').click(function(elem){
+                $('.row').isotope({ filter: '*', layoutMode: "fitRows"});
+                setTimeout(resize, 700);
+              });
+              $('#hats').click(function(elem){
+                $('.row').isotope({ filter: '.hats', layoutMode: "fitRows"});
+                setTimeout(resize, 700);
+              });
+              $('#pants').click(function(elem){
+                $('.row').isotope({ filter: '.pants', layoutMode: "fitRows"});
+                setTimeout(resize, 700);
+              });
+              $('#sweatshirts').click(function(elem){
+                $('.row').isotope({ filter: '.sweatshirts', layoutMode: "fitRows" });
+                setTimeout(resize, 700);
+              });
+              $('#t-shirts').click(function(elem){
+                $('.row').isotope({ filter: '.t-shirts', layoutMode: "fitRows" });
+                setTimeout(resize, 700);
+              });
+              $('#bags').click(function(elem){
+                $('.row').isotope({ filter: '.bags', layoutMode: "fitRows" });
+                setTimeout(resize, 700);
+              });
+              $('#accessories').click(function(elem){
+                $('.row').isotope({ filter: '.accessories', layoutMode: "fitRows" });
+                setTimeout(resize, 700);
               });
 
               $('.btn1').click(function(elem){
@@ -72,6 +115,8 @@ $(this).addClass('active');
                 document.getElementsByClassName("preview-card-text")[0].alt = category;
                 document.getElementsByClassName("preview-image")[0].src = url;
                 document.getElementsByClassName("preview-card-price")[0].innerText = price;
+                document.getElementById("extra-block").style.display = "none"; 
+                document.getElementsByClassName("extra-img")[0].style.display = "inline-block";
 
                 $("#layer").fadeIn("slow")
               });
@@ -141,7 +186,7 @@ $(this).addClass('active');
 
   		extra.onclick = function() {  document.getElementById("extra-block").style.display = "inline-block"; extra.style.display = "none";}
 
-      extraRemove.onclick = function() { document.getElementById("extra-block").style.display = "none"; extra.style.display = "inline-block";}
+      extraRemove.onclick = function() { document.getElementById("extra-block").style.display = "none"; borderColor2.style.width = "0"; extraColor.style.borderBottom = "3px solid rgb(255, 0, 84)"; document.getElementById("extra-input-color").value=""; extra.style.display = "inline-block";}
 
       close.onclick = function() { $("#layer").fadeOut("slow") }
 
@@ -182,9 +227,37 @@ $(this).addClass('active');
   		};
 
 function resize(){
-  $(".row").removeAttr( 'style' );
-
+  var max = 0;
+  var i = 0;
+  var j = 0;
+  var rows = new Array();
   $(".card:visible").each(function(){
-    $(this).removeAttr( 'style' );
+    if (i%3 == 0 && i !== 0){
+      rows[j] = max;
+      j = j+1;
+      max = 0;
+    }
+    if ($(this).outerHeight() > max){
+      max = $(this).outerHeight();
+    }
+    i = i+1;
+  });
+  rows[j] = max;
+  i = 0;
+  j = 0;
+  $(".card:visible").each(function(){
+    if (i%3 == 0 && i !== 0){
+      j = j+1;
+    }
+    if ($(this).outerHeight() !== rows[j]){
+      $(this).css('height', rows[j]);
+    }
+    i = i+1;
+  });
+  console.log(rows)
+}
+function hide(){
+  $(".card:visible").each(function(){
+    $(this).css('height', 'auto');
   });
 }

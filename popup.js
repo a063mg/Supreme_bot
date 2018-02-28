@@ -1,21 +1,75 @@
-function check(){
-	var File = new XMLHttpRequest();
-	File.open("GET", "pass.json", false);
-}
-File.onreadystatechange = function (){
-	if(rawFile.readyState === 4){
-		if(rawFile.status === 200 || rawFile.status == 0){
-			var allText = rawFile.responseText;
-			JSON.parse(allText)[0]
+var txt = '';
+
+var xmlhttp = new XMLHttpRequest();
+
+xmlhttp.onreadystatechange = function(){
+
+	if(xmlhttp.status == 200 && xmlhttp.readyState == 4){
+
+		if (option == "date"){
+			var txt = xmlhttp.responseText;
+			console.log(txt)
+			document.getElementById("time-to-end").innerText = txt + " days."
+			if (JSON.parse(localStorage["program"])["remember-me"] == false){
+				obj = JSON.parse(localStorage["program"]);
+				obj["login"] = undefined;
+				obj["password"] = undefined;
+				localStorage["program"] = JSON.stringify(obj);
+			}
+		}
+		else{
+			var txt = xmlhttp.responseText;
+			obj = JSON.parse(localStorage["program"]) 
+			if (txt == "Wrong data"){
+				window.location = "Password/auth.html";
+			}
+			else{
+				if (txt == "Wrong login"){
+					window.location = "Password/auth.html";
+				}
+				else{
+					if (txt == "Complete"){
+						option = "date"
+						xmlhttp.open("GET", "http://tranquil-tundra-12245.herokuapp.com/date/"+JSON.parse(localStorage["program"])["login"]+"/"+JSON.parse(localStorage["program"])["password"]+"/", true);
+						xmlhttp.send();
+					}
+					else{
+						var token = obj["session_token"];
+						obj["session_token"] = txt;
+						localStorage["program"] = JSON.stringify(obj)
+						xmlhttp.open("GET", "http://tranquil-tundra-12245.herokuapp.com/update/"+JSON.parse(localStorage["program"])["login"]+"/"+JSON.parse(localStorage["program"])["password"]+"/"+token+"/"+txt, true);
+						xmlhttp.send();
+					}
+				}
+			}
 		}
 	}
 }
 
-var page = document.getElementById("button");
 
-if(page){
-  page.addEventListener("click", cop, false);
+function checkdate(login, password, f){
+
+	if (f == "check" && localStorage["program"] !== undefined && JSON.parse(localStorage["program"])["session_token"] !== undefined && password !== undefined && login !== undefined){
+		// var option = "check";
+		token = JSON.parse(localStorage["program"])["session_token"] 
+		xmlhttp.open("GET", "http://tranquil-tundra-12245.herokuapp.com/check/"+login+"/"+password+"/"+token, true);
+		xmlhttp.send();
+	}
+
+	
 }
+
+var option = "check";
+
+checkdate(JSON.parse(localStorage["program"])["login"], JSON.parse(localStorage["program"])["password"], option);
+
+
+
+// var page = document.getElementById("timer");
+
+// if(page){
+//   page.addEventListener("click", cop, false);
+// }
 
 function loadItems(){
 	if (localStorage["data"] == undefined) {
@@ -71,10 +125,22 @@ document.getElementById('settings').onclick = () => window.open('/settings/setti
 document.getElementById('view').onclick = () => {
 	window.open("/droplist/droplist.html");
 };
-document.getElementById('submit').onclick = () => window.location = 'Password/auth.html';
+document.getElementById('timer').onclick = () => {
+	window.open("/timer/timer.html");
+};
+document.getElementById('back').onclick = () => { 
+		obj = JSON.parse(localStorage["program"])
+		obj["login"] = undefined
+		obj["password"] = undefined
+		localStorage["program"] = JSON.stringify(obj)
+		window.location = 'Password/auth.html';
+	};
 
 document.getElementById('clear').onclick = () => { 
 	clear();
+ };
+ document.getElementById('add').onclick = () => { 
+	window.location = 'add.html';
  };
 //chrome.tabs.create({ url: location.href.replace("popup", "settings") })
 

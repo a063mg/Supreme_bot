@@ -119,11 +119,10 @@ chrome.extension.onMessage.addListener(
         	case 'go':
     			tabId = request.id;
 
-
 			  	if (localStorage["data"] == undefined){
-			  		chrome.runtime.sendMessage({msg:'error', error: 'Error while adding item...'}, function submitForm(par){  
+			  		chrome.runtime.sendMessage({msg:'error', error: 'you have no items'}, function submitForm(par){  
   				  	console.log(par); 
-  			  });
+  			  		});
 			  	}
 				else{
 					var obj = JSON.parse(localStorage["data"]);
@@ -131,11 +130,39 @@ chrome.extension.onMessage.addListener(
 					if (index > 3){
 						localStorage["data"] = JSON.stringify({});
 					}
-					var url = 'http://www.supremenewyork.com/shop/all/' + obj[Object.keys(obj)[0]]["category"];
-					updateTab(tabId, url, find);
-					sendResponse();
-        			break
+					else{
+						if (index !== 0){
+							localStorage["repeat"] = JSON.stringify(0);
+							var url = 'http://www.supremenewyork.com/shop/all/' + obj[Object.keys(obj)[0]]["category"];
+							updateTab(tabId, url, find);
+	        			}
+        			}
         		}
+        		sendResponse();
+        		break
+        	case 'repeat':
+        		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        			tabId = tabs[0].id;
+        		});
+
+        		var i = JSON.parse(localStorage["repeat"]);
+
+        		var obj = JSON.parse(localStorage["data"]);
+
+        		if (i < 3){
+        			i = i + 1;
+        			localStorage["repeat"] = JSON.stringify(i);
+        			var url = 'http://www.supremenewyork.com/shop/all/' + obj[Object.keys(obj)[0]]["category"];
+					updateTab(tabId, url, find);
+        		}
+        		else{
+        			chrome.runtime.sendMessage({msg:'error', error: 'No item!'}, function sendResponse(error){ 
+					console.log("No item"); 
+					alert("No item");
+					});
+        		}
+        		
+
         	case 'error':
         		sendResponse(request.error);
         		break

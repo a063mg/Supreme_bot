@@ -17,5 +17,5 @@ function checkout(data){
 	$('#credit_card_month').val(data['card_month'])
 	$('#credit_card_year').val(data['card_year'])
 	$(".icheckbox_minimal").click()
-	$(".checkout").click()
+	$(".checkout").delay(data["delay"]).click()
 }

@@ -2,22 +2,59 @@
 <head>
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	 <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" type="text/css" href="tooltipster.bundle.min.css" />
 </head>
 <body>
-    <ul class="nav nav-pills nav-fill">
-      <li class="nav-item">
-        <a class="nav-link" href="/settings/settings.html">Settings</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="/site/test.html">Droplist</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../timer.html">Timer</a>
-      </li>
-  <!--    <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li> -->
-    </ul>
+    <div id="full-screen" class="full-screen">
+      <center><p style="font-size: 10vh" class="text-dark">Waiting ...</p>
+       <div class="circle-loader">
+          <div class="checkmark draw"></div>
+        </div></center>
+    </div>
+    <div id="#body">
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <a class="nav-link" href="/settings/settings.html">Settings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/site/test.html">Droplist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../timer/timer.html">Timer</a>
+        </li>
+    <!--    <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li> -->
+      </ul>
+    </div>
+
+    <nav class="navbar navbar-light bg-light">
+      <a id="all" class="navbar-brand" style="margin-left: 10%;" href="#">
+        <img src="photos/hanger.png" width="32" height="32" title="All" class="d-inline-block align-top" alt="">
+      </a>
+      <a id="jackets" class="navbar-brand" style="margin-left: 1%;" href="#">
+        <img src="photos/hoodie.png" width="32" height="32" title="Jackets" class="d-inline-block align-top" alt="">
+      </a>
+      <a id="t-shirts" class="navbar-brand" href="#">
+        <img src="photos/shirt.png" width="32" height="32" title="T-shirts" class="d-inline-block align-top" alt="">
+      </a>
+      <a id="sweatshirts" class="navbar-brand" href="#">
+        <img src="photos/shirt (1).png" width="32" height="32" title="Sweatshirts" class="d-inline-block align-top" alt="">
+      </a>
+      <a id="pants" class="navbar-brand" href="#">
+        <img src="photos/jeans.png" width="32" height="32" title="Pants" class="d-inline-block align-top" alt="">
+      </a>
+      <a id="hats" class="navbar-brand" href="#">
+        <img src="photos/cap.png" width="32" height="32" title="Hats" class="d-inline-block align-top" alt="">
+      </a>
+      <a id="bags" class="navbar-brand" href="#">
+        <img src="photos/backpack.png" width="32" height="32" title="Bags" class="d-inline-block align-top" alt="">
+      </a>
+      <a id="accessories" class="navbar-brand" style="margin-right: 10%;" href="#">
+        <img src="photos/watch.png" width="32" height="32" title="Accessories" class="d-inline-block align-top" alt="">
+      </a>
+    </nav>
+
     <div class="album text-muted">
         <div class="container">
           <div class="row" id="row">
@@ -71,9 +108,11 @@
             <button class="add add-button">Add</button><button id="close" class="close1">Close</button>
         </div>
     </div>
+  </div>
    <script src="../src/jquery-3.2.1.min.js"></script>
    <script src="../src/isotope.pkgd.js"></script>
    <script src="../src/cells-by-row.js"></script>
+   <script type="text/javascript" src="tooltipster.bundle.min.js"></script>
    <script src="droplist.js"></script>
 </body>
 </html>

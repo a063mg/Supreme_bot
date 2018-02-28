@@ -5,12 +5,17 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<div id="full-screen" class="full-screen">
+		<center><div class="circle-loader">
+			<div class="checkmark draw"></div>
+		</div></center> 
+	</div>
 	<ul class="nav nav-pills nav-fill">
 	  <li class="nav-item">
-	    <a class="nav-link" href="/settings/settings.html">Settings</a>
+	    <a class="nav-link" href="../settings/settings.html">Settings</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" href="droplist/droplist.html">Droplist</a>
+	    <a class="nav-link" href="../droplist/droplist.html">Droplist</a>
 	  </li>
 	  <li class="nav-item">
 	    <a class="nav-link active" href="timer.html">Timer</a>
@@ -25,7 +30,7 @@
 		<input class="form-control" step="2" type="time" value="00:00:00" id="startTime">
 		<center><button class="add add-button" id="start" >Start</button></center>
 	</div> 
-	<center><p style="font-size: 50px;" id="txt"></p></center>
+	<center><p style="font-size: 4.5rem;" id="txt"></p></center>
 	<center><button class="btn1" id="close" >Stop</button></center>
 
 	<script src="timer.js"></script>

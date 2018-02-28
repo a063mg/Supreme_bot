@@ -6,14 +6,13 @@
 	<link rel="stylesheet" href="style/styles.css">
 </head>
 <body class="text-center">
-	<div id="full-screen" class="full-screen">
-		  <center><p class="text-white">Waiting ...</p></center>
-	     <center><div class="circle-loader">
-	        <div class="checkmark draw"></div>
-	      </div></center>
-	</div>
-	<div class="form-signin">
-		<h1 href="" id="header-text" class="text">Log in please.</h1>
+<div class="form-signin">
+		<h1 href="" id="header-text" class="text">Creating account.</h1>
+	      
+	      <div id="shake-block0" class="form-label-group">
+	        <input id="inputToken"  title="Token is 8 character number" class="form-control1" placeholder="Token" required="">
+	      </div>
+
 	      <div id="shake-block1" class="form-label-group">
 	        <input id="inputLogin"  title="Login must contain only english letters, numbers, and special characters such as: . + @ _ - ^; no longer than 32 symbols" class="form-control1" placeholder="Login" required="">
 	      </div>
@@ -21,19 +20,19 @@
 	      <div id="shake-block2" class="form-label-group">
 	        <input type="password" title="Password must contain only english letters, numbers, and special characters such as: . + @ _ - ^; no longer than 32 symbols" id="inputPassword" class="form-control1" placeholder="Password" required="">
 	      </div>
-	      
-		    <div class="toggle-btn active">
-	  			<input id="remember-me" type="checkbox"  checked class="cb-value" />
-	  			<span class="round-btn"></span>
-			</div><p class="paragraph" style="display: inline-block; color:#fff; text-align: center;">Remember me</p><a href="regist.html" class="text-danger" style="float: right">Create account</a>
 
-	      <button id="submit" class="btn1">Enter</button>
+	      <div id="shake-block3" class="form-label-group">
+	        <input type="password" title="Passwords must be equal..." id="inputPassword-repeat" class="form-control1" placeholder="Repeat your password" required="">
+	      </div>
+
+	      <a href="auth.html" class="text-danger" style="float: right">Have account?</a>
+
+	      <button id="submit" class="btn1">Create</button>
 	</div>
 	<script type='text/javascript' src='jquery.min.js'></script>
 	<script type='text/javascript' src='jquery-ui.min.js'></script>
-	<script type="text/javascript" src="../jquery.savefile.js"></script>
 	<link rel="stylesheet" type="text/css" href="tooltipster.bundle.min.css" />
     <script type="text/javascript" src="tooltipster.bundle.min.js"></script>
-    <script src="password.js"></script>
+    <script src="regist.js"></script>
 </body>
 </html>

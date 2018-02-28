@@ -1,6 +1,6 @@
 function finditem(data){
 
-	dic = {".", ",": 1,"/": 1, "-": 1, "™": 1,"®": 1, "a": 1, "b": 1, "c": 1, "d": 1, "e": 1, "f": 1, "h": 1, "i": 1, "j": 1, "k": 1, "l": 1, "m": 1, "n": 1, "o": 1, "p": 1, "q": 1, "r": 1, "s": 1, "t": 1, "u": 1, "v": 1, "w": 1, "x": 1, "y": 1, "z": 1};
+	dic = {".": 1, ",": 1,"/": 1, "-": 1, "™": 1,"®": 1, "a": 1, "b": 1, "c": 1, "d": 1, "e": 1, "f": 1, "h": 1, "i": 1, "j": 1, "k": 1, "l": 1, "m": 1, "n": 1, "o": 1, "p": 1, "q": 1, "r": 1, "s": 1, "t": 1, "u": 1, "v": 1, "w": 1, "x": 1, "y": 1, "z": 1};
 
 	var items_color = data['color'].toLowerCase();
 	var items_color2 = data['color2']
@@ -106,12 +106,10 @@ function finditem(data){
 			}
 		}
 
-
 		if (no_item == true) {
-			chrome.runtime.sendMessage({msg:'error', error: 'No item!'}, function sendResponse(error){ 
-				console.log(error); 
-				alert(error);
-			});
+				chrome.runtime.sendMessage({msg:'repeat'}, function sendResponse(error){ 
+					console.log('repeat'); 
+				});
 		}
 		else{
 			if (no_color == true) {
