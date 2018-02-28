@@ -1,3 +1,6 @@
+body{
+	display: none;
+}
 .container{
 	margin: auto;
 	align-self: center;
@@ -101,7 +104,7 @@ select{
 	padding-right:15px;
 	padding-left:15px;
 	font-size: 1.25rem;
-	color: #23272b;
+	color: #dc3545;
 }
 .alert{
 	display: none;

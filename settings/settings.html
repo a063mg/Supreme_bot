@@ -1,7 +1,7 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-   	<script src="../jquery-3.2.1.min.js"></script>
+   	<script src="../src/jquery-3.2.1.min.js"></script>
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,10 +12,10 @@
 	    <a class="nav-link active" href="/settings/settings.html">Settings</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" href="/site/test.html">Droplist</a>
+	    <a class="nav-link" href="/droplist/droplist.html">Droplist</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" href="">Timer</a>
+	    <a class="nav-link" href="../timer/timer.html">Timer</a>
 	  </li>
 <!-- 	  <li class="nav-item">
 	    <a class="nav-link disabled" href="#">Disabled</a>
@@ -113,7 +113,7 @@
 			<div class="card1">
 				<b class="text-center">credit card information</b>
 				<div class="form-group row">
-				    <label for="card_type" id="input-card_type" class="lbl">Card type</label>
+				    <label for="card_type" id="input-card_type" style="color: #23272b;" class="lbl">Card type</label>
 				    <div class="colum">
 					    <select id="card_type" name="card_type" class="form-control">
 					      	<option value="american_express">American Express</option>
@@ -127,8 +127,8 @@
 				<div class="form-group row">
 				    <label for="card_number" id="input-card_number" class="lbl">Card number</label>
 				    <div class="colum">
-				      <input class="form-control" name="inputNumber" id="card_number" placeholder="Number"><img class="color-sprite" alt="card_number" src="photos/ic_clear_black_24px.svg">
-				      <label for="card_number">Your card number</label>
+				      <input class="form-control" name="inputNumber" id="card_number" placeholder="Number"><img id="for-card-number" class="color-sprite" alt="card_number" src="photos/ic_clear_black_24px.svg">
+				      <label id="for-card-number1" for="card_number">Your card number</label>
 				    </div>
 				</div>
 				<div class="form-group row">
@@ -167,11 +167,11 @@
 					<a>Options</a>
 				</div>
 				<div class="form-group row">
-				    <label for="reCapcha" class="lbl">Remove</label>
+				    <label for="removeCapcha" style="color: #23272b" class="lbl">Remove</label>
 				    <div class="colum">
 					    <div class="form-check">
-	  						<input type="checkbox" id="reCapcha" value="remove">
-	  						<label class="form-check-label" for="reCapcha">
+	  						<input  class="custom-control-label" type="checkbox" id="removeCapcha" value="remove">
+	  						<label class="form-check-label" for="removeCapcha">
 	  							reCapcha
 							</label>
 							<div style="float: right; margin-right: 10%;">
@@ -181,6 +181,40 @@
 								</label>
 							</div>
 						</div>
+					</div>
+				</div>
+				<div class="form-group row">
+				    <label style="color: #23272b" for="preview" class="lbl">Available</label>
+				    <div class="form-check">
+	  						<input  class="custom-control-label" type="checkbox" id="preview" value="available">
+	  						<label class="form-check-label" for="preview">
+	  							Preview images
+							</label>
+					</div>
+				</div>
+				<div class="form-group row">
+				    <label style="color: #23272b" for="timer" class="lbl">Timer</label>
+				    <div class="form-check">
+	  						<input  class="custom-control-label" type="checkbox" id="timer" value="available">
+	  						<label class="form-check-label" for="prelook">
+	  							Automaticly then drop started.
+							</label>
+					</div>
+				</div>
+				<div class="form-group row">
+				    <label style="color: #23272b" for="delay" class="lbl">Delay Payment</label>
+				    <div class="form-check">
+	  						<select class="form-control" value="0" style="width: 100%; padding: 0;" name="delay" id="delay">
+	  							<option value="0">0</option>
+				      			<option value="0.5">0,5</option>
+				      			<option value="1">1</option>
+				      			<option value="1.5">1,5</option>
+				      			<option value="2">2</option>
+								<option value="2.5">2,5</option>
+				      			<option value="3">3</option>
+				      			<option value="4">4</option>
+				      			<option value="5">5</option>
+				      		</select>
 					</div>
 				</div>
 			</div>

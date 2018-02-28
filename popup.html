@@ -1,18 +1,20 @@
 <html>
 <head>
    <link rel="stylesheet" href="styles/style.css">
-   <script src="jquery-3.2.1.min.js"></script>
+   <script src="src/jquery-3.2.1.min.js"></script>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 <body>
   <div class="block"><h1>Supreme Bot</h1></div>
-  <div class="block" style="margin-top: 1rem;">
-  <button id="button" class="btn1">Go</button>
-  <button class="btn1" id='settings'>Settings</button>
+      <p style="float: right; margin-right: 5%; margin-bottom: 0.5rem; margin-top: 0.5rem;" id="time-to-end" class="text-danger"> days.</p>
+      <p class="text-white" style="float: right; margin-right: 10px; margin-bottom: 0.5rem;margin-top: 0.5rem;">Avaliable:</p>
+  <button class="btn1" id='view' style="width: 40%; float: left; margin-left: 5%">Droplist</button>
+  <button class="btn1" id='settings' style="width: 40%; float: right; margin-right: 5%; margin-top: 10px;">Settings</button>
   <!-- <button class="btn1" id='items'>Items</button> -->
-  <button class="btn1" id='view'>Droplist</button>
-  <button class="btn1" id='clear'>Clear</button></div>
-  <center><table style="margin-top: 1rem;" class="table table-dark">
+  <button class="btn1" id='timer' style="width: 40%; float: left; margin-left: 5%">Timer</button>
+  <button class="btn1" style="width: 40%; float: left; margin-left: 5%; margin-bottom: 0.5rem;" id='add'>Add item</button><!-- <button class="btn1" style="width: 40%; float: right; margin-right: 5%;" id='clear'>Clear</button> -->
+  <button id="back" class="exit" style="display: inline-block; margin-bottom: 0.5rem;">Exit</button>
+  <center><table id="table" style="margin-top: 1rem;" class="table table-dark">
   <thead>
     <tr id="tr">
       <th scope="col">#</th>
@@ -20,13 +22,14 @@
       <th scope="col">Color</th>
       <th scope="col">Size</th>
       <th scope="col">Category</th>
-      <th style="text-align: center;" scope="col">X</th>
+      <th id="clear" style="text-align: center;" scope="col">X</th>
     </tr>
   </thead>
   <tbody id="items_table">
     
   </tbody>
 </table></center>
+<script src="src/jquery-3.2.1.min.js"></script>
 <script src="popup.js"></script>
 </body>
 </html>
