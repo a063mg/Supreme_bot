@@ -1,0 +1,11 @@
+django==1.9.2
+dj-database-url==0.4.1
+gunicorn==19.6.0
+psycopg2==2.6.2
+whitenoise==3.3.0
+requests==2.9.1
+urllib3==1.12
+PyTelegramBotAPI==3.2.1
+beautifulsoup4==4.4.0
+grequests==0.3.0
+selenium==3.6.0

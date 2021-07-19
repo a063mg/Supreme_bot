@@ -1,0 +1,23 @@
+{
+	"update_id":418061616,
+	"message": {
+		"message_id":6,
+		"from":
+		{
+			"id":238155657,
+			"first_name":"Max",
+			"last_name":"Cvetkoff",
+			"username":"Hanibal_Lektor"
+		},
+		"chat": {
+			"id":238155657,
+			"first_name":"Max",
+			"last_name":"Cvetkoff",
+			"username":"Hanibal_Lektor",
+			"type":"private"
+		},
+		"text": "/start"
+	}
+}
+
+{"message": {"text": "test"}, "from": {"id": 238155657}}}
